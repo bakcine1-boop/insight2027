@@ -110,6 +110,10 @@ details.bio p{font-size:14px;margin:10px 0 0;color:var(--ink2);line-height:1.75}
 .pt tr.sum td{color:var(--mu)}
 .pt tr.ours td{border-bottom:1px solid var(--ink);font-weight:700;font-size:18px;padding:16px 0}
 .ask{font-size:14px;color:var(--mu);margin-top:16px}
+.steps{list-style:none;counter-reset:st;margin:0 0 26px;padding:0;border-top:1px solid var(--rule)}
+.steps li{counter-increment:st;display:grid;grid-template-columns:28px 1fr;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px;color:var(--ink2);line-height:1.6}
+.steps li::before{content:counter(st);font-size:13px;color:var(--mu);font-variant-numeric:tabular-nums;padding-top:1px}
+.steps b{color:var(--ink);font-weight:600}
 /* faq */
 .faq details{border-bottom:1px solid var(--rule);padding:16px 0}
 .faq details:first-of-type{border-top:1px solid var(--ink);margin-top:24px}
@@ -202,7 +206,7 @@ footer .fl img.kc{height:20px}
       <div class="facts">
         <div class="fr"><span class="k">컨퍼런스</span><span class="v">11월 19일(목) 저녁 6시<em>Zoom 온라인 · 녹화 영상 제공</em></span></div>
         <div class="fr"><span class="k">아카데미</span><span class="v">12월 1일부터 8주, 16강<em>온라인 · 기간 제한 없이 다시 보기</em></span></div>
-        <div class="fr" id="priceRow"><span class="k">참가비</span><span class="v"><strong>50,000원</strong><span class="reg">정상가 75,000원</span><em>CTS 지사를 통해 안내받으신 동역교회 참가비입니다. 컨퍼런스, 아카데미, 핸드북을 모두 포함합니다.</em></span></div>
+        <div class="fr" id="priceRow"><span class="k">참가비</span><span class="v"><strong>50,000원</strong><span class="reg">정상가 75,000원</span><em>CTS 지사장님께 받으신 코드를 결제 화면에 넣으시면 적용됩니다. 컨퍼런스, 아카데미, 핸드북을 모두 포함합니다.</em></span></div>
       </div>
       <a class="btn apply" id="heroBtn" href="#">신청하기</a>
       <a class="more" href="#about">자세한 내용 보기</a>
@@ -329,7 +333,12 @@ footer .fl img.kc{height:20px}
           <tr class="sum"><td>세 가지를 함께 신청하실 때 정상가</td><td>75,000원</td></tr>
           <tr class="ours"><td>CTS 동역교회 참가비</td><td>50,000원</td></tr>
         </table>
-        <p class="note" style="margin-bottom:26px">CTS 지사를 통해 이 안내를 받으신 교회께 드리는 참가비입니다.</p>
+        <p class="note" style="margin-bottom:22px">CTS 지사를 통해 이 안내를 받으신 교회께 드리는 참가비입니다.</p>
+        <ol class="steps">
+          <li><span><b>신청하기</b>를 누르고 <b>컨퍼런스 + 아카데미</b>를 고릅니다.</span></li>
+          <li><span>주문서의 신청 경로에서 <b>CTS 지사 추천</b>을 고릅니다.</span></li>
+          <li><span><b>쿠폰</b> 칸에 지사장님께 받으신 코드를 넣고 코드확인을 누르시면 50,000원으로 바뀝니다.</span></li>
+        </ol>
         <a class="btn apply" href="#">신청하기</a>
         <p class="ask">문의 · 가까운 CTS 지사 또는 대한민국 목회 컨퍼런스 <span style="white-space:nowrap">02-6333-0088</span></p>
       </div>
@@ -343,7 +352,8 @@ footer .fl img.kc{height:20px}
         <details><summary>11월 19일 저녁에 참여하기 어렵습니다</summary><p>컨퍼런스는 녹화 영상이 제공됩니다. 편하신 시간에 보실 수 있습니다.</p></details>
         <details><summary>아카데미 강의는 언제까지 볼 수 있나요</summary><p>기간 제한 없이 다시 보실 수 있습니다. 수료증은 2027년 1월 31일까지 전 강의를 들으신 분께 드립니다.</p></details>
         <details><summary>핸드북은 언제 받나요</summary><p>전자책으로 1월 중 보내 드릴 예정입니다.</p></details>
-        <details><summary>신청은 어디에서 하나요</summary><p>이 페이지의 신청하기 버튼을 누르시면 대한민국 목회 컨퍼런스(KCMC) 홈페이지의 신청 화면으로 이동합니다. 결제와 강의 수강은 KCMC 홈페이지에서 이루어집니다.</p></details>
+        <details><summary>코드는 어디에서 받나요</summary><p>이 안내를 보내 드린 CTS 지사장님께서 함께 알려 드립니다. 받지 못하셨다면 가까운 CTS 지사로 문의해 주세요.</p></details>
+        <details><summary>신청은 어디에서 하나요</summary><p>신청하기 버튼을 누르시면 대한민국 목회 컨퍼런스(KCMC) 홈페이지의 신청 화면으로 이동합니다. 결제와 강의 수강은 KCMC 홈페이지에서 이루어집니다.</p></details>
       </div>
     </div>
   </section>
@@ -361,7 +371,7 @@ footer .fl img.kc{height:20px}
 <div class="toast" id="toast">신청 링크는 KCMC와 연결하는 중입니다</div>
 
 <script>
-const APPLY_URL = ""; // KCMC 동역교회 특별가 상품 주소가 정해지면 넣습니다
+const APPLY_URL = "https://kcmc.or.kr/shop_view?idx=26&utm_source=cts_branch&utm_medium=landing&utm_campaign=beyondtrends";
 document.querySelectorAll('.apply').forEach(a=>{
   if (APPLY_URL) { a.href = APPLY_URL; a.target = "_blank"; a.rel = "noopener"; }
   else a.addEventListener('click', e=>{ e.preventDefault(); const t=document.getElementById('toast'); t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on'),2200); });
